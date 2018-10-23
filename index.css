@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+.allButtons {
+  display: flex;
+  width: 400px;
+  flex-wrap: wrap;
+}
+
+.result {
+  border: 1px solid black;
+  width: 400px;
+  background-color: black;
+  color: white;
+  font-size: 40px;
+  text-align: right;
+  padding: 40px 5px 0px 0px;
+  
+}
+
+.buttonContainer {
+  display: flex;
+  flex: 25%;
+  height: 100px;
+  
+}
+
+button {
+  width: 100px;
+  border: 1px solid black;
+  font-size: 40px;
+  color: black;
+  cursor: pointer;
+}
+
+button.numbers:hover {
+  background-color: whitesmoke;
+}
+
+button.numbers:active {
+  background-color: darkgray ;
+}
+
+button.operators:hover {
+  background-color: burlywood;
+}
+
+button.operators:active {
+  background-color: chocolate;
+}
+
+.half {
+  flex: 50%;
+}
+
+.threeQuarter {
+  flex: 75%;
+}
+
+.operators {
+  background-color: #df974c;
+  color: white;
+}
+
+.numbers {
+  background-color: #d8d9db;
+}
+
