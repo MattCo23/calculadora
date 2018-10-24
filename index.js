@@ -3,6 +3,7 @@ valor.addEventListener("click", onClick);
 let firstNumber = "";
 let secondNumber = "";
 let operator = "";
+let container = firstNumber + secondNumber;
 
 function onClick(evento) {
   const result = document.querySelector(".result");
@@ -39,7 +40,8 @@ function onClick(evento) {
     
     case "C":
       firstNumber = "";
-      secondNumber ="";
+      secondNumber = "";
+      operator = "0";
       result.innerText = "0";
       break;
     
@@ -49,6 +51,7 @@ function onClick(evento) {
     case "+":
       operator = character;
       result.innerText = "";
+      
       break;
     
     case "←":
@@ -56,11 +59,12 @@ function onClick(evento) {
       break;
     
     case "=":
-      result.innerText = "";
+      result.innerText = container;
       break;
     
     default:
       console.log("Algo va mal amigo");
   }
 }
+
 
