@@ -36,10 +36,13 @@ function onClick(evento) {
         result.innerText = secondNumber;
       }
       break;
+    
     case "C":
       firstNumber = "";
+      secondNumber ="";
       result.innerText = "0";
       break;
+    
     case "÷":
     case "×":
     case "-":
@@ -47,13 +50,17 @@ function onClick(evento) {
       operator = character;
       result.innerText = "";
       break;
+    
     case "←":
       result.innerText = "";
       break;
+    
     case "=":
       result.innerText = "";
       break;
+    
     default:
       console.log("Algo va mal amigo");
   }
 }
+
