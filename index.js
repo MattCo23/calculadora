@@ -2,8 +2,7 @@ const valor = document.querySelector(".allButtons");
 valor.addEventListener("click", onClick);
 let firstNumber = "";
 let secondNumber = "";
-      
-
+let operator = "";
 
 function onClick(evento) {
   const result = document.querySelector(".result");
@@ -12,6 +11,7 @@ function onClick(evento) {
     result.innerText = boton.innerText;
   }
   let character = evento.target.innerText;
+
   switch (character) {
     case "1":
     case "2":
@@ -23,17 +23,28 @@ function onClick(evento) {
     case "8":
     case "9":
     case "0":
-      firstNumber = firstNumber + character; 
-      result.innerText = firstNumber;
+      if (
+        operator !== "+" &&
+        operator !== "-" &&
+        operator !== "×" &&
+        operator !== "÷"
+      ) {
+        firstNumber = firstNumber + character;
+        result.innerText = firstNumber;
+      } else {
+        secondNumber = secondNumber + character;
+        result.innerText = secondNumber;
+      }
       break;
     case "C":
       firstNumber = "";
-      result.innerText = 0;
+      result.innerText = "0";
       break;
     case "÷":
     case "×":
     case "-":
     case "+":
+      operator = character;
       result.innerText = "";
       break;
     case "←":
