@@ -1,6 +1,9 @@
 const valor = document.querySelector(".allButtons");
-
 valor.addEventListener("click", onClick);
+let firstNumber = "";
+let secondNumber = "";
+      
+
 
 function onClick(evento) {
   const result = document.querySelector(".result");
@@ -8,8 +11,8 @@ function onClick(evento) {
   if (evento.target.tagName === "BUTTON") {
     result.innerText = boton.innerText;
   }
-  let characters = evento.target.innerText;
-  switch (characters) {
+  let character = evento.target.innerText;
+  switch (character) {
     case "1":
     case "2":
     case "3":
@@ -20,10 +23,12 @@ function onClick(evento) {
     case "8":
     case "9":
     case "0":
-      result.innerText = evento.target.innerText;
+      firstNumber = firstNumber + character; 
+      result.innerText = firstNumber;
       break;
     case "C":
-      result.innerText = "0";
+      firstNumber = "";
+      result.innerText = 0;
       break;
     case "÷":
     case "×":
@@ -38,6 +43,6 @@ function onClick(evento) {
       result.innerText = "";
       break;
     default:
-      console.log("Aquí hay un cable suelto amigo...");
+      console.log("Algo va mal amigo");
   }
 }
