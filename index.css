@@ -11,19 +11,18 @@
 .result {
   border: 1px solid black;
   width: 400px;
+  height: 100px;
   background-color: black;
   color: white;
   font-size: 40px;
   text-align: right;
   padding: 40px 5px 0px 0px;
-  
 }
 
 .buttonContainer {
   display: flex;
   flex: 25%;
   height: 100px;
-  
 }
 
 button {
@@ -39,7 +38,7 @@ button.numbers:hover {
 }
 
 button.numbers:active {
-  background-color: darkgray ;
+  background-color: darkgray;
 }
 
 button.operators:hover {
@@ -66,4 +65,3 @@ button.operators:active {
 .numbers {
   background-color: #d8d9db;
 }
-

@@ -3,7 +3,7 @@ valor.addEventListener("click", onClick);
 let firstNumber = "";
 let secondNumber = "";
 let operator = "";
-let container = firstNumber + secondNumber;
+let container = "";
 
 function onClick(evento) {
   const result = document.querySelector(".result");
@@ -37,34 +37,45 @@ function onClick(evento) {
         result.innerText = secondNumber;
       }
       break;
-    
+
     case "C":
       firstNumber = "";
       secondNumber = "";
       operator = "0";
       result.innerText = "0";
       break;
-    
+
     case "÷":
     case "×":
     case "-":
     case "+":
       operator = character;
       result.innerText = "";
-      
+
       break;
-    
+
     case "←":
       result.innerText = "";
       break;
-    
+
     case "=":
-      result.innerText = container;
+      if (operator === "+") {
+        let resultado1 = parseInt(firstNumber) + parseInt(secondNumber);
+        result.innerText = String(resultado1);
+      } else if (operator === "-") {
+        let resultado2 = parseInt(firstNumber) - parseInt(secondNumber);
+        result.innerText = String(resultado2);
+      } else if (operator === "×") {
+        let resultado3 = parseInt(firstNumber) * parseInt(secondNumber);
+        result.innerText = String(resultado3);
+      } else if (operator === "÷") {
+        let resultado4 = parseInt(firstNumber) / parseInt(secondNumber);
+        result.innerText = String(resultado4);
+      }
+
       break;
-    
+
     default:
       console.log("Algo va mal amigo");
   }
 }
-
-
