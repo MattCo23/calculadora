@@ -3,7 +3,6 @@ valor.addEventListener("click", onClick);
 let firstNumber = "";
 let secondNumber = "";
 let operator = "";
-let container = "";
 
 function onClick(evento) {
   const result = document.querySelector(".result");
@@ -55,28 +54,40 @@ function onClick(evento) {
       break;
 
     case "←":
-      result.innerText = "";
+      if (operator === "") {
+        firstNumber = firstNumber.slice(0, firstNumber.length - 1);
+        if (firstNumber === "") {
+          result.innerText = "0";
+        } else {
+          result.innerText = firstNumber;
+        }
+      } else {
+        secondNumber = secondNumber.slice(0, secondNumber.length - 1);
+        if (secondNumber === "") {
+          result.innerText = "0";
+        } else {
+          result.innerText = secondNumber;
+        }
+      }
+
       break;
 
     case "=":
+      let resultado;
       if (operator === "+") {
-        let resultado1 = parseInt(firstNumber) + parseInt(secondNumber);
-        result.innerText = String(resultado1);
-        firstNumber = String(resultado1);
+        resultado = parseInt(firstNumber) + parseInt(secondNumber);
+        result.innerText = String(resultado);
       } else if (operator === "-") {
-        let resultado2 = parseInt(firstNumber) - parseInt(secondNumber);
-        result.innerText = String(resultado2);
-        firstNumber = String(resultado2);
+        resultado = parseInt(firstNumber) - parseInt(secondNumber);
+        result.innerText = String(resultado);
       } else if (operator === "×") {
-        let resultado3 = parseInt(firstNumber) * parseInt(secondNumber);
-        result.innerText = String(resultado3);
-        firstNumber = String(resultado3);
+        resultado = parseInt(firstNumber) * parseInt(secondNumber);
+        result.innerText = String(resultado);
       } else if (operator === "÷") {
-        let resultado4 = parseInt(firstNumber) / parseInt(secondNumber);
-        result.innerText = String(resultado4);
-        firstNumber = String(resultado4);
+        resultado = parseInt(firstNumber) / parseInt(secondNumber);
+        result.innerText = String(resultado);
       }
-
+      firstNumber = String(resultado);
       operator = "";
       secondNumber = "";
 
