@@ -62,16 +62,23 @@ function onClick(evento) {
       if (operator === "+") {
         let resultado1 = parseInt(firstNumber) + parseInt(secondNumber);
         result.innerText = String(resultado1);
+        firstNumber = String(resultado1);
       } else if (operator === "-") {
         let resultado2 = parseInt(firstNumber) - parseInt(secondNumber);
         result.innerText = String(resultado2);
+        firstNumber = String(resultado2);
       } else if (operator === "×") {
         let resultado3 = parseInt(firstNumber) * parseInt(secondNumber);
         result.innerText = String(resultado3);
+        firstNumber = String(resultado3);
       } else if (operator === "÷") {
         let resultado4 = parseInt(firstNumber) / parseInt(secondNumber);
         result.innerText = String(resultado4);
+        firstNumber = String(resultado4);
       }
+
+      operator = "";
+      secondNumber = "";
 
       break;
 
